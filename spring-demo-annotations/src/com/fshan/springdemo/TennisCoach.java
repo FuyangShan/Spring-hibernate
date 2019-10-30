@@ -1,11 +1,16 @@
 package com.fshan.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
-
+	
+	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	//define a default constructor 
@@ -13,6 +18,8 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach: inside default construction <<");
 	}
 	
+	
+	/*
 	//define a setter method
 	@Autowired
 	public void setFortuneService(FortuneService theFortuneService) {
@@ -20,7 +27,13 @@ public class TennisCoach implements Coach {
 		fortuneService = theFortuneService;
 	}
 	
-	/*
+	
+	@Autowired
+	public void doSomeStuff(FortuneService theFortuneService) {
+		System.out.println(">> TennisCoach: inside doSoeStuff() method <<");
+	}
+	
+	
 	@Autowired
 	public TennisCoach(FortuneService theFortuneService) {
 		fortuneService = theFortuneService;
