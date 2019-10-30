@@ -27,7 +27,7 @@ public class TrackCoach implements Coach {
 	
 	//add an init method
 	public void walkingMyDog() {
-		System.out.println("TrackCoach: inside method walkingMyDog");
+		System.out.println("TrackCoach: inside method walkMyDog");
 	}
 	
 	//add a destory method
