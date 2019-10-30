@@ -11,8 +11,3 @@
 	
 	<context:component-scan base-package="com.fshan.springdemo"/>
 </beans>
-
-
-
-
-
